@@ -5,6 +5,7 @@ import ChatIcon from "@mui/icons-material/Chat";
 import MoreVertIcon from "@mui/icons-material/MoreVert";
 import { IconButton } from "@mui/material";
 import SearchOutlinedIcon from "@mui/icons-material/SearchOutlined";
+import Button from "@mui/material/Button";
 
 function Sidebar() {
   return (
@@ -22,7 +23,9 @@ function Sidebar() {
       </Header>
       <Search>
         <SearchOutlinedIcon />
+        <SearchInput placeholder="search items" />
       </Search>
+      <SidebarButton>New Chat</SidebarButton>
     </Container>
   );
 }
@@ -53,4 +56,23 @@ const UserAvatar = styled(Avatar)`
 
 const IconsContainer = styled.div``;
 
-const Search = styled.div``;
+const Search = styled.div`
+  display: flex;
+  align-items: center;
+  padding: 20px;
+  border-radius: 3px;
+`;
+const SearchInput = styled.input`
+  outline: none;
+  border: none;
+  flex: 1;
+`;
+
+const SidebarButton = styled(Button)`
+  width: 100%;
+  color: black;
+  &&& {
+    border-top: 1px solid whitesmoke;
+    border-bottom: 1px solid whitesmoke;
+  }
+`;
